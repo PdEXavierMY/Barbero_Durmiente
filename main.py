@@ -1,4 +1,5 @@
 import time, random
+import os
 from barbero import Barber, customerIntervalMin, customerIntervalMax
 from cola_tienda import BarberShop
 from cliente import Customer
