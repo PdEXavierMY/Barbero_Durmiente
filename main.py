@@ -1,34 +1,17 @@
-from threading import Lock
 import time, random
-from barbero import Barber
+from barbero import Barber, customerIntervalMin, customerIntervalMax
 from cola_tienda import BarberShop
 from cliente import Customer
+from introducir import solicitar_introducir_numero, solicitar_introducir_palabra
 
-mutex = Lock()# para que no se pueda acceder a la barberia mientras se esta cortando el pelo
 
 if __name__ == '__main__':
 	#Interval in seconds
-    customerIntervalMin = 5
-    customerIntervalMax = 15
+    nclientes = solicitar_introducir_numero("Introduzca el número de clientes que desea introducir")
 
     customers = []
-    customers.append(Customer('Sara'))
-    customers.append(Customer('Carlota'))
-    customers.append(Customer('María'))
-    customers.append(Customer('Alex'))
-    customers.append(Customer('Andrea'))
-    customers.append(Customer('Javi'))
-    customers.append(Customer('Raúl'))
-    customers.append(Customer('Rubén'))
-    customers.append(Customer('Lorenzo'))
-    customers.append(Customer('David'))
-    customers.append(Customer('Pepe'))
-    customers.append(Customer('Pedro'))
-    customers.append(Customer('Paco'))
-    customers.append(Customer('Juan'))
-    customers.append(Customer('Tomas'))
-    customers.append(Customer('Lara'))
-    customers.append(Customer('Ana'))
+    for i in range(nclientes):
+        customers.append(Customer('{}'.format(solicitar_introducir_palabra("Introduzca el nombre del cliente"))))
 
     barber = Barber()
 

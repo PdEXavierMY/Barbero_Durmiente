@@ -1,9 +1,5 @@
-from threading import Thread, Lock
-
-customerIntervalMin = 5
-customerIntervalMax = 15
-haircutDurationMin = 3
-mutex = Lock()# para que no se pueda acceder a la barberia mientras se esta cortando el pelo
+from threading import Thread
+from barbero import haircutDurationMin, customerIntervalMin, customerIntervalMax, mutex
 
 class BarberShop:
 	waitingCustomers = []

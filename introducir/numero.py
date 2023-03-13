@@ -45,3 +45,19 @@ def solicitar_introducir_numero_extremo(invite, minimum=MIN, maximum=MAX):
         if minimum <= datoIntroducido <= maximum:
             # Tenemos lo que queremos, salimos del bucle saliendo de la función
             return datoIntroducido
+        
+def solicitar_introducir_numero_extremo_superior(invite, minimum=MIN):
+    """
+    Esta función utiliza el anterior y añade una post-condición
+    sobre los extremos del número a introducir
+    """
+    invite = "{} superior a {}".format(invite, minimum)
+    while True:
+        # Entramos en un bucle infinito
+
+        # Pedimos introducir un número
+        datoIntroducido = solicitar_introducir_numero(invite)
+
+        if minimum < datoIntroducido:
+            # Tenemos lo que queremos, salimos del bucle saliendo de la función
+            return datoIntroducido

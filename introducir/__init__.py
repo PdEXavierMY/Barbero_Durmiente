@@ -5,6 +5,7 @@ Módulo que gestiona todas las funcionalidades de introducción de datos
 from .numero import (
     solicitar_introducir_numero,
     solicitar_introducir_numero_extremo,
+    solicitar_introducir_numero_extremo_superior
 )
 
 from .buleano import (
