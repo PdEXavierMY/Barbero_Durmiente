@@ -4,10 +4,15 @@ from introducir import solicitar_introducir_numero, solicitar_introducir_numero_
 
 mutex = Lock()# para que no se pueda acceder a la barberia mientras se esta cortando el pelo
 
+#variables reutilizables en todo el programa
 haircutDurationMin = solicitar_introducir_numero("Introduzca el tiempo mínimo de corte de pelo")
+#variable que almacena el tiempo mínimo que tardará en cortar el pelo
 haircutDurationMax = solicitar_introducir_numero_extremo_superior("Introduzca el tiempo máximo de corte de pelo", haircutDurationMin)
+#variable que almacena el tiempo máximo que tardará en cortar el pelo
 customerIntervalMin = solicitar_introducir_numero("Introduzca el intervalo mínimo entre clientes")
+#variable que almacena el intervalo mínimo entre clientes
 customerIntervalMax = solicitar_introducir_numero_extremo_superior("Introduzca el intervalo máximo entre clientes", customerIntervalMin)
+#variable que almacena el intervalo máximo entre clientes
 
 class Barber:
 	barberWorkingEvent = Event()#El barbero se crea un evento que es cuando está trabajando

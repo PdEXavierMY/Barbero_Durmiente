@@ -2,7 +2,7 @@ from threading import Thread
 from barbero import haircutDurationMin, customerIntervalMin, customerIntervalMax, mutex
 
 class BarberShop:
-	waitingCustomers = []
+	waitingCustomers = [] #lista de clientes que están esperando
 
 	def __init__(self, barber, asientos):
 		self.barber = barber
@@ -35,14 +35,14 @@ class BarberShop:
 				print ('El barbero se ha despertado')
 
 	def enterBarberShop(self, customer):
-		mutex.acquire()
+		mutex.acquire() #bloqueamos hasta que suceda el release
 		print ('>>>>> {} entró en la tienda y está buscando un sitio'.format(customer.name))
 
-		if len(self.waitingCustomers) == self.asientos:
+		if len(self.waitingCustomers) == self.asientos: #si la sala de espera está llena
 			print ('La sala de espera está llena, {} se va a marchar.'.format(customer.name))
 			mutex.release()
 		else:
 			print ('{} se ha sentado en la sala de espera'.format(customer.name))
-			self.waitingCustomers.append(customer)
+			self.waitingCustomers.append(customer) #añadimos al cliente a la lista de clientes en espera
 			mutex.release()
 			self.barber.wakeUp()#Despertamos al barbero
