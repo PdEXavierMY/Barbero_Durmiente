@@ -25,3 +25,7 @@ if __name__ == '__main__':
         barberShop.enterBarberShop(c)#el cliente c entra a la barbería
         customerInterval = random.randrange(customerIntervalMin,customerIntervalMax+1)
         time.sleep(customerInterval)
+
+    time.sleep(1)
+    print ('Todos los clientes de hoy han sido atendidos')
+    os._exit(0)
