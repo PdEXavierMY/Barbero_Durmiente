@@ -55,7 +55,7 @@ class Barber:
 		print ('{} ha terminado'.format(customer.name))        
 ```
 
-Este archivo se encarga de crear las variables que definiran los tiempos dentro del codigo y de crear al barbero con sus funciones para dormir, despertar y cortar el pelo.
+Este archivo se encarga de crear las variables que definirán los tiempos dentro del codigo y de crear al barbero con sus funciones para dormir, despertar y cortar el pelo.
 
 El código realizado para la tienda es el siguiente:
 
